@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+<title>{{page}}</title>
+{% endblock %}
+
+
+
+{% block content %}
+<main>
+    <div class="container col-lg d-flex">
+      {% for blog in blogs %}
+      <div class="card" style="width: 18rem">
+        <img
+        src="{{blog.image}}"
+          class="card-img-top"
+          alt="..."
+        />
+        <div class="card-body">
+          <h5 class="card-title">{{blog.title}}</h5>
+          <p class="card-text">
+              {{blog.content}}
+          </p>
+          <a href="/blogs/{{blog.id}}" class="btn btn-primary">{{blog.status}}</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </main>
+
+{% endblock %}

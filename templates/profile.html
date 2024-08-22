@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block css %}
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+
+{% endblock %}
+
+
+{% block content %}
+<div class="container text-center">
+    {% if name == 'John Doe' %}
+        <p>Welcome, {{name}}</p>
+    {% elif name == 'Kate Spade' %}
+        <h1>hi, {{name}}</h1>
+    {% else %}
+        <h1>HELLO, {{name}}</h1>
+    {% endif %}
+</div>
+{% endblock %}
